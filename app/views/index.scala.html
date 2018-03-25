@@ -1,0 +1,18 @@
+@import helper.form, helper.CSRF
+@()
+
+@main(title = "Construmarket | ASR-4") {
+    <h1>Construmarket de LumenConcept</h1>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    @form(routes.HomeController.test) {
+                        @CSRF.formField
+                        <button type="submit" class="btn btn-primary">Probar</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}
