@@ -13,5 +13,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-mailer" % "6.0.1",
   "com.typesafe.play" %% "play-mailer-guice" % "6.0.1",
 
-  "it.innove" % "play2-pdf" % "1.8.0"
+  "it.innove" % "play2-pdf" % "1.8.0",
+
+  "com.google.cloud" % "google-cloud-vision" % "1.24.1"
 )

@@ -1,11 +1,18 @@
-@(filename: String)
+@import com.google.cloud.vision.v1.EntityAnnotation
+@(results: List[EntityAnnotation])
 @main(title = "Upload Image") {
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1>Resultados del análisis de la imagen</h1>
-                    <p>El nombre del archivo subido es <b>@filename</b></p>
+                    <ul>
+                        @for(annotation <- results){
+                            <li>
+                                <b>@annotation.getDescription(): </b>@annotation.getScore()
+                            </li>
+                        }
+                    </ul>
                     <a href="@routes.ImageUploadController.UploadImage" class="btn btn-outline-primary">Regresar</a>
                 </div>
             </div>

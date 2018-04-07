@@ -1,24 +1,21 @@
 @import helper.form, helper.CSRF, helper.inputFile
 @(f: Form[forms.FormData])
-@main(title = "Upload Image") {
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Subida de imagenes</h1>
-                    @form(action = routes.ImageUploadController.AnalizeImage, 'enctype -> "multipart/form-data"){
-                        @CSRF.formField
-                        <div class="input-group mb-3">
-                            <div class="custom-file">
-                                @inputFile(f("image"), 'id -> "input-image", 'class -> "custom-file-input", '_label -> null)
-                                <label class="custom-file-label" for="input-image">Browse</label>
+    @main(title = "Upload Image") {
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Subida de imagenes</h1>
+                        @form(action = routes.ImageUploadController.AnalizeImage, 'enctype -> "multipart/form-data") {
+                            @CSRF.formField
+                            <div class="form-group">
+                            @inputFile(f("image"), 'id -> "input-image", 'class -> "form-control", '_label -> "Seleccione una imagen")
                             </div>
-                        </div>
 
-                        <button type="submit" class="btn btn-primary">Analizar imagen</button>
-                    }
+                            <button type="submit" class="btn btn-primary">Analizar imagen</button>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-}
+        </section>
+    }
