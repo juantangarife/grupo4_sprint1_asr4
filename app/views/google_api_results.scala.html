@@ -1,0 +1,14 @@
+@(filename: String)
+@main(title = "Upload Image") {
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Resultados del análisis de la imagen</h1>
+                    <p>El nombre del archivo subido es <b>@filename</b></p>
+                    <a href="@routes.ImageUploadController.UploadImage" class="btn btn-outline-primary">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+}
