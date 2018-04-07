@@ -3,7 +3,6 @@ package controllers;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vision.v1.*;
-import com.itextpdf.text.log.SysoCounter;
 import forms.FormData;
 import play.mvc.*;
 import play.mvc.Http.MultipartFormData;
